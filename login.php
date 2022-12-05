@@ -11,13 +11,22 @@
     ?>
 </head>
 <body>
-    <?php include("rsc/template/nav.php"); ?>
+    <?php include("rsc/template/nav.php");
+    if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+        print("Vous êtes déjà connecté");
+    }
+    else{
+    print('
     <form action="tryLogin.php" method="post">
             Votre login : <input type="text" name="login">
             <br />
             Votre mot de passe : <input type="password" name="pwd"><br />
             <input type="submit" value="Connexion">
     </form>
-    <?php include("rsc/template/footer.php"); ?>
+
+    ');
+    }
+
+    include("rsc/template/footer.php"); ?>
 </body>
 </html>

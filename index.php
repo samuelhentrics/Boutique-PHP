@@ -12,7 +12,8 @@
 </head>
 <body>
     <?php include("rsc/template/nav.php"); ?>
-
+    <h1>Bienvenue sur votre site de vente préféré pour vos achats de CD</h1>
+    <p>Achetez chez nous !<p>
     <?php include("rsc/template/footer.php"); ?>
 </body>
 </html>
