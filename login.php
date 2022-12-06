@@ -19,7 +19,7 @@
     }
     else{
     print('
-    <form action="tryLogin.php" method="post">
+    <form action="rsc/fonctions/login.php" method="post">
             Votre login : <input type="text" name="login">
             <br />
             Votre mot de passe : <input type="password" name="pwd"><br />
