@@ -1,4 +1,14 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if(isset($_SESSION["monPanier"])){
+    echo "votre panier esiste";
+    print_r($_SESSION["monPanier"]);  
+}else{
+    $_SESSION["monPanier"] = array(["nomProduit", 50]);
+    echo "votre panier n'esiste pas je vous l'es cree";
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
