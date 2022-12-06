@@ -13,8 +13,14 @@
 <body>
     <?php include("rsc/template/nav.php"); ?>
 
-    <h1>Bienvenue sur votre site de vente préféré pour vos achats de CD</h1>
-    <p>Achetez chez nous !<p>
+        <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Titre</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Voir l'article</a>
+    </div>
+    </div>
 
     <?php include("rsc/template/footer.php"); ?>
 </body>

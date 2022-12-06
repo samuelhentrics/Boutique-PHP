@@ -19,6 +19,8 @@ if (isset($_POST['login']) && isset($_POST['pwd'])) {
     $resultReq = mysqli_fetch_assoc($result);
     $pwd_valide = $resultReq["mdp"];
 
+    print($pwd_valide);
+
     $link->close();
 
     // on vérifie les informations saisies

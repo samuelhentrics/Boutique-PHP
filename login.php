@@ -12,6 +12,8 @@
 </head>
 <body>
     <?php include("rsc/template/nav.php");
+
+    
     if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
         print("Vous êtes déjà connecté");
     }
