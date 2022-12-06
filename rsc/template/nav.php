@@ -12,18 +12,27 @@
       <li class="nav-item">
         <a class="nav-link" href="articles.php">Articles</a>
       </li>
-      <li class="nav-item">
+      
       <?php
 
       // On récupère nos variables de session
-      if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+      if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['role'])) {
+        if($_SESSION['role']){
+          print('
+          <li class="nav-item">
+            <a class="nav-link" href="listeArticles.php">Liste des articles</a>
+          </li>');
+        }
+        print('<li class="nav-item">');
         print("<a href=\"rsc/fonctions/logout.php\" class=\"btn btn-outline-alert my-2 my-sm-0\" >Se déconnecter</a>");
+        print('</li>');
       } else {
+        print('<li class="nav-item">');
         print("<a href=\"login.php\" class=\"btn btn-outline-success my-2 my-sm-0\" >Se connecter</a>");
+        print('</li>');
       }
       ?>
         
-      </li>
     </ul>
   </div>
 </nav>
