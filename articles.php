@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start(); ?>
+<!-- <?php session_start(); ?> -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,7 +31,14 @@ function faireUnNouveauCD($genre, $titre, $auteur, $prix, $imgPochette=null){
     return $cd;
 };
 
-
+function afficherListeCD($liste){
+    foreach($liste as $l => $unCD){
+        echo "<br>----";
+        foreach ($unCD as $key => $value) {
+            print_r($value." ");
+        } 
+    }
+}
 // $cd = {
 //     $genre = "JPOP";
 //     $titre = "Hayasaka song";
@@ -41,6 +48,10 @@ function faireUnNouveauCD($genre, $titre, $auteur, $prix, $imgPochette=null){
 // } 
 
 array_push($listeCD, faireUnNouveauCD("JPOP", "REDO", "LISA", 20));
-print_r($listeCD); 
+array_push($listeCD, faireUnNouveauCD("RAP", "CHOP", "LISA", 20));
+array_push($listeCD, faireUnNouveauCD("CLASIC", "AVALE", "LISA", 20));
+array_push($listeCD, faireUnNouveauCD("OSEF", "NoName", "LISA", 20));
+
+afficherListeCD($listeCD); 
 
 ?>
