@@ -13,6 +13,9 @@
         <a class="nav-link" href="articles.php">Articles</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="panier.php">Panier</a>
+      </li>
+      <li class="nav-item">
       <?php
 
       // On récupère nos variables de session
