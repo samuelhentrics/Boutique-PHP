@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- <?php session_start(); ?> -->
@@ -17,7 +19,8 @@
 
 <?php 
 $listeCD = [];
-
+$monPanier = $_SESSION['monPanier'];
+// define("MON_PANIER", $monPanier);
 function faireUnNouveauCD($genre, $titre, $auteur, $prix, $imgPochette=null){
     
     $cd = [
@@ -34,7 +37,7 @@ function faireUnNouveauCD($genre, $titre, $auteur, $prix, $imgPochette=null){
 function afficherListeCD($liste){
     foreach($liste as $l => $unCD){
         echo "<br>----";
-        foreach ($unCD as $key => $value) {
+                foreach ($unCD as $key => $value) {
             print_r($value." ");
         } 
     }

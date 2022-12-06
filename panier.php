@@ -1,7 +1,14 @@
 <?php session_start();
 if(isset($_SESSION["monPanier"])){
 
-    print_r($_SESSION["monPanier"]);
+    // print_r($_SESSION["monPanier"]);
+
+    function afficherElemPanier(){
+        foreach ($_SESSION["monPanier"] as $monPanier => $unElementDuPanier) {
+            print_r($unElementDuPanier); //array
+        }
+    }
+    afficherElemPanier();
 }
 ?>
 

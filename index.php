@@ -1,10 +1,10 @@
 <?php session_start(); 
 if(isset($_SESSION["monPanier"])){
-    echo "votre panier esiste";
+    echo "votre panier existe";
     print_r($_SESSION["monPanier"]);  
 }else{
-    $_SESSION["monPanier"] = array(["nomProduit", 50]);
-    echo "votre panier n'esiste pas je vous l'es cree";
+    // $_SESSION["monPanier"] = array(["COMPILJPOP2022", 50]);
+    echo "votre panier est vide";
 }
 
 
