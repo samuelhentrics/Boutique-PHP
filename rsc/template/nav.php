@@ -13,7 +13,16 @@
         <a class="nav-link" href="articles.php">Articles</a>
       </li>
       <li class="nav-item">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Se connecter</button>
+      <?php
+
+      // On récupère nos variables de session
+      if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+        print("<a href=\"logout.php\" class=\"btn btn-outline-alert my-2 my-sm-0\" >Se déconnecter</a>");
+      } else {
+        print("<a href=\"login.php\" class=\"btn btn-outline-success my-2 my-sm-0\" >Se connecter</a>");
+      }
+      ?>
+        
       </li>
     </ul>
   </div>
