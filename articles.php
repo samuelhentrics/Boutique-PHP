@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
-=======
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
->>>>>>> 7346a7f98b402ec74fd23a88d5a66e73c0f62cfc
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
