@@ -14,7 +14,7 @@
     <?php include("rsc/template/nav.php");
 
     
-    if (isset($_SESSION['login']) && isset($_SESSION['pwd'])) {
+    if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['role'])) {
         print("Vous êtes déjà connecté");
     }
     else{
