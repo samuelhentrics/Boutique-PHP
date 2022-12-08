@@ -1,4 +1,7 @@
-<?php session_start();
+<?php session_start(); ?>
+<?php 
+if($_POST["POST"])
+    echo var_dump($_POST);
 if(isset($_SESSION["monPanier"])){
 
     // print_r($_SESSION["monPanier"]);
