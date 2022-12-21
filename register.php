@@ -21,12 +21,14 @@ include("global.php");
     }
     else{
     print('
-    <form action="rsc/fonctions/login.php" method="post">
-            Votre nom : <input type="text" name="user">
-            <br />
+    <h2>S\'inscrire</h2>
+    <form action="rsc/fonctions/creerUtilisateur.php" method="post">
+            Votre nom : <input type="text" name="user"><br />
             Votre mot de passe : <input type="password" name="pwd"><br />
+            Administrateur ? (Mode dev) <input type="checkbox" name="role"><br />
             <input type="submit" value="Connexion">
     </form>
+    
 
     ');
     }

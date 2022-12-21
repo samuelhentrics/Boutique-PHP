@@ -1,4 +1,4 @@
-<?php include("global.php");
+<?php include("global.php"); ?>
 
 <form action="./aFaire.php" method="GET">
     <input type="number" placeholder="Numero de carte *"></input>

@@ -20,12 +20,11 @@
     else{
     print('
     <form action="rsc/fonctions/login.php" method="post">
-            Votre login : <input type="text" name="login">
-            <br />
+            Votre login : <input type="text" name="login"><br />
             Votre mot de passe : <input type="password" name="pwd"><br />
             <input type="submit" value="Connexion">
     </form>
-
+    <a href="register.php">Vous n\'êtes pas incris ? Cliquez ici !</a>
     ');
     }
 
