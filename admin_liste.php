@@ -20,6 +20,8 @@ include("global.php");
 <body>
     <?php include("rsc/template/nav.php");
 
+    echo '<div class="container">';
+
 
     if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['role'])) {
         if($_SESSION['role']){
@@ -68,7 +70,7 @@ include("global.php");
     print('<h1>Page inacessible</h1>');
     }
     
-
+    echo '</div>';
     include("rsc/template/footer.php"); ?>
 </body>
 </html>
