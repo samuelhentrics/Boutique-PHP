@@ -1,13 +1,5 @@
-<?php session_start(); 
-if(isset($_SESSION["monPanier"])){
-    echo "votre panier existe";
-    print_r($_SESSION["monPanier"]);  
-}else{
-    $_SESSION["monPanier"] = array();
-    echo "votre panier est vide";
-}
-
-
+<?php
+include("global.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">

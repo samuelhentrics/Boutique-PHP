@@ -1,3 +1,5 @@
+<?php include("global.php");
+
 <form action="./aFaire.php" method="GET">
     <input type="number" placeholder="Numero de carte *"></input>
     <input type="date" placeholder="Date d'expiration *"></input>

@@ -3,10 +3,7 @@
 // on teste si nos variables sont définies
 if (isset($_POST['login']) && isset($_POST['pwd'])) {
     // On récupére le mot de passe du nom de login
-    $bdd = "shloistine_bd";
-    $host = "lakartxela.iutbayonne.univ-pau.fr";
-    $user = "shloistine_bd";
-    $pass = "shloistine_bd";
+    include("sql_param.php");
     $login_valide = $_POST['login'];
 
     $nomtable = "utilisateur";

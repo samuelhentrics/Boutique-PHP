@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+include("global.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
