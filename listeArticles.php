@@ -43,11 +43,11 @@ include("global.php");
                 foreach ($listeArticles as $numArticle => $unArticle){
                     print('
                     <tr>
-                        <td>'.$unArticle["url_image"].'</td>
-                        <td>'.$unArticle["titre"].'</td>
-                        <td>'.$unArticle["genre"].'</td>
-                        <td>'.$unArticle["auteur"].'</td>
-                        <td>'.$unArticle["prix"].'</td>
+                        <td>'.$unArticle->img_url.'</td>
+                        <td>'.$unArticle->titre.'</td>
+                        <td>'.$unArticle->genre.'</td>
+                        <td>'.$unArticle->auteur.'</td>
+                        <td>'.$unArticle->prix.'</td>
                         <td>'.$numArticle.'</td>
                     </tr>
                 ');

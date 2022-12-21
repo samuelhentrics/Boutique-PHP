@@ -1,4 +1,5 @@
 <?php function creerListeArticles(){
+    include("rsc/class/Article.php");
     $listeArticles = array();
 
     include("sql_param.php");
@@ -9,11 +10,8 @@
     $resultats=$connexion->query("SELECT * FROM cd");
     $resultats->setFetchMode(PDO::FETCH_OBJ);
     while( $tuple = $resultats->fetch() ) {
-        $listeArticles[$tuple->id]["titre"] = $tuple->titre;
-        $listeArticles[$tuple->id]["genre"] = $tuple->genre;
-        $listeArticles[$tuple->id]["auteur"] = $tuple->auteur;
-        $listeArticles[$tuple->id]["prix"] = $tuple->prix;
-        $listeArticles[$tuple->id]["url_image"] = $tuple->url_image;
+        $unCD = new Article($tuple->id, $tuple->titre,$tuple->genre,$tuple->auteur,$tuple->prix,$tuple->url_image);
+        $listeArticles[$tuple->id] = $unCD;
     }
     $resultats->closeCursor();
     } // fin try
