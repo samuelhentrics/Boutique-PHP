@@ -7,7 +7,7 @@ include("global.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Liste des articles</title>
     <?php include("rsc/template/head.php");
         
     ?>
@@ -20,12 +20,23 @@ include("global.php");
 <body>
     <?php include("rsc/template/nav.php");
 
-    echo '<div class="container">';
+    echo '<div class="container"><br>';
 
 
     if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['role'])) {
         if($_SESSION['role']){
-            print('<h1>Liste des articles</h1>');
+            print('<div class="row">
+                        <div class="col-md-10">
+                            <h3>
+                                Liste des articles
+                            </h3>
+                        </div>
+                        <div class="col-md-2">
+                            <a type="button" class="btn btn-primary btn-lg" href="admin_add.php">
+                                Ajouter un article
+                            </a>
+                        </div>
+                    </div><br><br>');
             print('
             <table id="liste" class="display" style="width:100%">
                 <thead>
@@ -50,7 +61,17 @@ include("global.php");
                         <td>'.$unArticle->genre.'</td>
                         <td>'.$unArticle->auteur.'</td>
                         <td>'.$unArticle->prix.'</td>
-                        <td>'.$numArticle.'</td>
+                        <td>
+                            <form id="modifier" action="rsc/fonctions/modifierArticle.php" method="post">
+                            <input type="hidden" name="id" value="'.$unArticle->id.'"/>
+                            <input type="submit" value="Modifier"></input>
+                            </form>
+
+                            <form id="delete" action="rsc/fonctions/supprimerArticle.php" method="post">
+                            <input type="hidden" name="id" value="'.$unArticle->id.'"/>
+                            <input type="submit" value="Supprimer"></input>
+                            </form>
+                        </td>
                     </tr>
                 ');
                 }

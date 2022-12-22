@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 21 déc. 2022 à 13:31
+-- Généré le : jeu. 22 déc. 2022 à 18:11
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -32,9 +32,18 @@ CREATE TABLE `cd` (
   `titre` varchar(255) NOT NULL,
   `genre` varchar(255) NOT NULL,
   `auteur` varchar(255) NOT NULL,
-  `prix` decimal(10,0) NOT NULL,
+  `prix` decimal(10,2) NOT NULL,
   `url_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `cd`
+--
+
+INSERT INTO `cd` (`id`, `titre`, `genre`, `auteur`, `prix`, `url_image`) VALUES
+(1, 'Civilisation', 'French RAP', 'Orelsan', '27.99', 'Civilisation.jpg'),
+(2, 'Mauvais Ordre', 'French RAP', 'Lomepal', '21.99', 'Mauvais-Ordre.jpg'),
+(3, 'L\'Emprise', 'French Indie', 'Mylene Farmer', '19.99', 'L-Emprise.jpg');
 
 -- --------------------------------------------------------
 
@@ -82,7 +91,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `cd`
 --
 ALTER TABLE `cd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
