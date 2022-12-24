@@ -8,12 +8,14 @@
     include("sql_param.php");
     try {
 
-        // Tentative de connexion à la BDD
+        // Tentative de connexion à la BDD (en PDO)
         $connexion = new PDO(
             'mysql:host=' . $host . ';dbname=' . $bdd,
             $user,
             $pass
         );
+
+        // Requete
         $resultats = $connexion->query("SELECT * FROM cd");
         $resultats->setFetchMode(PDO::FETCH_OBJ);
 
@@ -28,7 +30,7 @@
 
         // Fermeture de la BDD
         $resultats->closeCursor();
-    } // fin try
+    }
     catch (Exception $e) {
         echo 'Erreur : ' . $e->getMessage() . '<br />';
     }

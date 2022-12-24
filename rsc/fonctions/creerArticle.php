@@ -16,7 +16,16 @@ if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['rol
             $prix = $_POST['prix'];
 
             $tmpNomImage = $_FILES['image']['tmp_name'];
-            $nomImage = $_FILES['image']['name'];
+
+            // On récupére l'extension de l'image
+            $nomFichier = $_FILES['image']['name'];
+            $explodeExtension = explode('.', $nomFichier);
+            $extension = strtolower(end($explodeExtension));
+
+            // On crée un nom unique à l'image
+            $nomImage = uniqid('', true) . "." . $extension;
+
+            // On met l'image dans le dossier
             move_uploaded_file($tmpNomImage, '../img/' . $nomImage);
 
             $nomtable = "cd";
@@ -28,7 +37,8 @@ if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['rol
                 // Tentative d'ajout de l'article
                 mysqli_query($link, $query);
                 echo '<body onLoad="alert(\'Article crée\')">';
-            } catch (Exception $e) {
+            }
+            catch (Exception $e) {
                 // Sinon si erreur 
                 echo '<body onLoad="alert(\'Erreur lors de l\'ajout\')">';
             }
@@ -39,7 +49,8 @@ if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['rol
             // Redirection vers le login
             echo '<meta http-equiv="refresh" content="0;URL=../../admin_liste.php">';
         } else {
-            echo 'Les variables du formulaire ne sont pas déclarées.';
+            echo '<body onLoad="alert(\'Erreur lors de l\'ajout\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=../../admin_liste.php">';
         }
     }
     else{

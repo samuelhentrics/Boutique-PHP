@@ -62,7 +62,7 @@ include("global.php");
                         <td>'.$unArticle->auteur.'</td>
                         <td>'.$unArticle->prix.'</td>
                         <td>
-                            <form id="modifier" action="rsc/fonctions/modifierArticle.php" method="post">
+                            <form id="modifier" action="admin_edit.php" method="post">
                             <input type="hidden" name="id" value="'.$unArticle->id.'"/>
                             <input type="submit" value="Modifier"></input>
                             </form>
