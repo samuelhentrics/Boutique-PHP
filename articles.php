@@ -37,7 +37,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<br> id: ". $row["id"]. " - Name: ". $row["titre"]. " " . $row["genre"] ." <img src=./rsc/img/".$row['url_image'].">" . "<br>";
+        echo "<br> id: ". $row["id"]. " - Name: ". $row["titre"]. " " . $row["genre"] ." <img src='./rsc/img/".$row['url_image']."'width='120px'>" . "<br>";
         print("<button onclick=ajoutCdSession(".$row["id"].")>Ajouter au panier</button>");
     }
 } else {
