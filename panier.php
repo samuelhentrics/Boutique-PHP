@@ -10,52 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
     <?php include("rsc/template/head.php"); ?>
+    <?php include("rsc/fonctions/panierJS.php"); ?>
 </head>
 
 <body>
-<script>
-function getXMLHttpRequest() {
-	var xhr = null;
-	if (window.XMLHttpRequest || window.ActiveXObject) {
-		if (window.ActiveXObject) {
-			try {
-				xhr = new ActiveXObject("Msxml2.XMLHTTP");
-			} catch(e) {
-				xhr = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-		} else {
-			xhr = new XMLHttpRequest(); 
-		}
-	} else {
-		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-		return null;
-	}
-	return xhr;
-}
-function viderPanier(){
-//Déclaration de notre objet XHR à l'aide de notre fonction déclarer plus haut
-var xhr = getXMLHttpRequest();
-//Déclaration d'une fonction sur l'événement onreadystatechange qui évolue au fur et à mesure de l'appel
-xhr.onreadystatechange = function () {
-  if(this.readyState == 4) //si la requête à abouti et est terminée
-  {    
-     if(this.status == 200) // si le code de retour est 200, le serveur à répondu et envoyé une réponse
-     {
-        //Le traitement à effectuer avec la réponse : affichage via alert, passage à une fonction, mise un jour du DOM (réponse dans xhr.responseText et dans xhr.responseXML).
-        // alert("panier vidée")
-     }
-     else 
-     {
-        //traitement dans le cas d'un retour en erreur code != 200 : affichage par alert, console, mise à jour du DOM. 
-        alert("erreur lors de la suppresion du panier");
-     }
-    location.reload()
-  }
-}
-xhr.open("GET","./supprimerPanier.php",true); //Requête AJAX en mode GET sur l'url donnée.
-xhr.send(null); //Puisque c'est une requête en GET
-}
-</script>
+    
     <?php
 
     include("rsc/template/nav.php");
@@ -77,7 +36,8 @@ xhr.send(null); //Puisque c'est une requête en GET
                 echo '<h3>'.$unElementDuPanier["titre"].'</h3>';
                 echo '<h5>'.$unElementDuPanier["auteur"].'</h5>';
                 echo '<h3>'.$unElementDuPanier["prix"].'</h3>';
-                echo '<input type="number" placeholder="quantite" min="0" value="1">';
+                echo '<input type="number" placeholder="quantite" min="0" value="'.$unElementDuPanier["quantite"].'">';
+                echo '<button onclick="supprimerDuPanier('.$unElementDuPanier["id"].')">Supprimer</button>';
                 echo '</div>';
                 // echo "<br>    - Name: ". $row["titre"]. " " . $row["genre"] ." <img src=./rsc/img/".$row['url_image'].">" . "<br>";
             }
