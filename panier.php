@@ -28,7 +28,7 @@
         {
             // var_dump($_SESSION["monPanier"]);  
 
-
+            $totalPrix = 0;
             foreach ($_SESSION["monPanier"] as $monPanier => $unElementDuPanier) {
                 echo "<br>";
                 echo '<div style="display: inline-flex;">';
@@ -40,8 +40,9 @@
                 echo '<button onclick="supprimerDuPanier('.$unElementDuPanier["id"].')">Supprimer</button>';
                 echo '</div>';
                 // echo "<br>    - Name: ". $row["titre"]. " " . $row["genre"] ." <img src=./rsc/img/".$row['url_image'].">" . "<br>";
+            $totalPrix = $totalPrix + ($unElementDuPanier["prix"]*$unElementDuPanier["quantite"]);
             }
-            
+            echo '<h1>prix total a payer: ' . $totalPrix . '€</h1>';
         }
 
         // Cas où le panier est vide
@@ -52,6 +53,7 @@
         // Cas où le panier n'est pas vide
         else {
             afficherElemPanier();
+
         }
     }
 
