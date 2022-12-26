@@ -64,13 +64,10 @@ xhr.send(null); //Puisque c'est une requête en GET
 
 </script>
     <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "shloistine_bd";
+include("./rsc/fonctions/sql_param.php");
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $user, $pass, $bdd);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);

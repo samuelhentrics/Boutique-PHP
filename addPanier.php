@@ -1,12 +1,12 @@
 <?php 
 // Démarrage de la session
 session_start(); 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "shloistine_bd";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+
+include("./rsc/fonctions/sql_param.php");
+
+// Create connection
+$conn = new mysqli($host, $user, $pass, $bdd);
 $sql = "SELECT * FROM cd";
 $result = $conn->query($sql);
 $listeCD = array(array('id' => "id", "titre" => "titre", "genre"=> "genre", "auteur"=>"auteur", "prix"=>"prix", "url_image" =>"url_image"));
