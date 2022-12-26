@@ -77,7 +77,6 @@ xhr.send(null); //Puisque c'est une requête en GET
                 echo '<h3>'.$unElementDuPanier["titre"].'</h3>';
                 echo '<h5>'.$unElementDuPanier["auteur"].'</h5>';
                 echo '<h3>'.$unElementDuPanier["prix"].'</h3>';
-                echo '<h3>'.$unElementDuPanier["prix"].'</h3>';
                 echo '<input type="number" placeholder="quantite" min="0" value="1">';
                 echo '</div>';
                 // echo "<br>    - Name: ". $row["titre"]. " " . $row["genre"] ." <img src=./rsc/img/".$row['url_image'].">" . "<br>";
@@ -103,6 +102,17 @@ xhr.send(null); //Puisque c'est une requête en GET
     include("rsc/template/footer.php");
 
     ?>
+<form action="validationCarteBancaire.php" method="post">
+  <label for="numeroCarte">Numéro de carte (5134476373697754) : </label><br>
+  <input type="text" id="numeroCarte" name="numeroCarte" required><br>
+  <label for="nomCarte">Nom du titulaire de la carte :(null)</label><br>
+  <input type="text" id="nomCarte" name="nomCarte" required><br>
+  <label for="dateExpiCarte">Date d'expiration (MM/YYYY) :</label><br>
+  <input type="text" id="dateExpiCarte" name="dateExpiCarte" required><br>
+  <label for="cvv">CVV :</label><br>
+  <input type="text" id="cvv" name="cvv" required><br><br>
+  <input type="submit" value="Payer">
+</form>
 
 
 </body>
