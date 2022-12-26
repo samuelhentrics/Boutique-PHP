@@ -14,7 +14,11 @@
 </head>
 
 <body>
-    
+    <script>
+function modifierquantite(id){
+modifierquantitePanier(id, document.querySelector(`input#inputQuantite${id}`).value )
+}
+</script>
     <?php
 
     include("rsc/template/nav.php");
@@ -36,7 +40,7 @@
                 echo '<h3>'.$unElementDuPanier["titre"].'</h3>';
                 echo '<h5>'.$unElementDuPanier["auteur"].'</h5>';
                 echo '<h3>'.$unElementDuPanier["prix"].'</h3>';
-                echo '<input type="number" placeholder="quantite" min="0" value="'.$unElementDuPanier["quantite"].'">';
+                echo '<input type="number" id=inputQuantite'.$unElementDuPanier["id"].' placeholder="quantite" min="0" onchange="modifierquantite('.$unElementDuPanier["id"].')" value="'.$unElementDuPanier["quantite"].'">';
                 echo '<button onclick="supprimerDuPanier('.$unElementDuPanier["id"].')">Supprimer</button>';
                 echo '</div>';
                 // echo "<br>    - Name: ". $row["titre"]. " " . $row["genre"] ." <img src=./rsc/img/".$row['url_image'].">" . "<br>";
