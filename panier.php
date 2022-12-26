@@ -77,6 +77,8 @@ xhr.send(null); //Puisque c'est une requête en GET
                 echo '<h3>'.$unElementDuPanier["titre"].'</h3>';
                 echo '<h5>'.$unElementDuPanier["auteur"].'</h5>';
                 echo '<h3>'.$unElementDuPanier["prix"].'</h3>';
+                echo '<h3>'.$unElementDuPanier["prix"].'</h3>';
+                echo '<input type="number" placeholder="quantite" min="0" value="1">';
                 echo '</div>';
                 // echo "<br>    - Name: ". $row["titre"]. " " . $row["genre"] ." <img src=./rsc/img/".$row['url_image'].">" . "<br>";
             }
