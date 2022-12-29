@@ -25,7 +25,7 @@
             $unCD = new Article($tuple->id, $tuple->titre, $tuple->genre, $tuple->auteur, $tuple->prix, $tuple->url_image);
             
             // Ajout de l'objet dans la liste
-            $listeArticles[$tuple->id] = $unCD;
+            array_push($listeArticles, $unCD);
         }
 
         // Fermeture de la BDD

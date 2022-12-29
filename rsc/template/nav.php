@@ -27,24 +27,23 @@
         if($_SESSION['role']){
           print('
           <li class="nav-item">
-            <a class="nav-link" href="admin_liste.php">Liste des articles</a>
+            <a class="btn btn-outline-success" href="admin_liste.php">Liste des articles</a>
           </li>');
         }
 
         // On propose à l'utilisateur de se déconnecter
         print('<li class="nav-item">');
-        print("<a href=\"rsc/fonctions/logout.php\" class=\"btn btn-outline-alert my-2 my-sm-0\" >Se déconnecter</a>");
+        print("<a href=\"rsc/fonctions/logout.php\" class=\"btn btn-outline-danger\" >Se déconnecter</a>");
         print('</li>');
       }
 
       // Si l'on est pas connecté on propose à l'utilisateur de se connecter
       else {
         print('<li class="nav-item">');
-        print("<a href=\"login.php\" class=\"btn btn-outline-success my-2 my-sm-0\" >Se connecter</a>");
+        print("<a href=\"login.php\" class=\"btn btn-outline-success mr-1\" >Se connecter</a>");
         print('</li>');
       }
       ?>
-        
     </ul>
   </div>
 </nav>

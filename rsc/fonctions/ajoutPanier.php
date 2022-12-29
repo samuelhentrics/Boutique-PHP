@@ -19,12 +19,19 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $conn->close();
-print_r($_SESSION['monPanier']);
+
+
 if (isset($listeCD[$_GET["idCD"]])) {
-    if (!$_SESSION['monPanier'][$_GET["idCD"]])
+    if (!$_SESSION['monPanier'][$_GET["idCD"]]){
         $_SESSION['monPanier'][$_GET["idCD"]] = $listeCD[$_GET["idCD"]];
-    else
+    }
+    else{
         $_SESSION["monPanier"][$_GET["idCD"]]['quantite'] = $_SESSION["monPanier"][$_GET["idCD"]]['quantite']+1;
+    }
+    echo '<body onLoad="alert(\'Article ajouté au panier\')">';
+    echo '<meta http-equiv="refresh" content="0;URL=../../articles.php">';
 }
+echo '<body onLoad="alert(\'Erreur lors de l\'ajout de l\'article au panier\')">';
+echo '<meta http-equiv="refresh" content="0;URL=../../articles.php">';
 
 ?>

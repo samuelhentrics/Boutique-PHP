@@ -20,33 +20,61 @@
 
 <body>
     <?php include("rsc/template/nav.php"); ?>
-    <?php include("./rsc/fonctions/sql_param.php"); ?>
+    
     <?php include("./rsc/fonctions/panierJS.php"); ?>
 
-
 <?php
-// Create connection
-$conn = new mysqli($host, $user, $pass, $bdd);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
 
-$sql = "SELECT * FROM cd";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<br> id: ". $row["id"]. " - Name: ". $row["titre"]. " " . $row["genre"] ." <img src='./rsc/fonctions/genererVignette.php?nom=".$row['url_image']."'>" . "<br>";
-        print("<button onclick=ajoutCdSession(".$row["id"].")>Ajouter au panier</button>");
+include_once("rsc/fonctions/recupererListeArticles.php");
+
+echo '
+<div class="container">';
+
+$nbArticle = 0;
+$nbMaxArticleLigne = 4;
+
+foreach ($listeArticles as $idListe => $unArticle){
+    if ($nbArticle%$nbMaxArticleLigne == 0){
+        echo '<div class="card-group mb-3">';
     }
-} else {
-    echo "0 results";
+
+    echo '
+    <div class="card">
+        <img class="card-img-top" src="rsc/fonctions/genererVignette.php?nom='. $unArticle->img_url .'">
+        <div class="card-body">
+            <h5 class="card-title">'. $unArticle->titre .'</h5>
+            <p class="card-text"><small class="text-muted">Artiste : '. $unArticle->auteur .'</small></p>
+            <p class="card-text">Prix : '. $unArticle->prix .'</p>
+            <a class="btn btn-primary" href="rsc/fonctions/ajoutPanier.php?idCD='.$unArticle->id.'">Ajouter au panier</a>
+        </div>
+    </div>
+    ';
+
+    if ($idListe == sizeof($listeArticles)-1){
+        $moduloActuel = $nbArticle%$nbMaxArticleLigne;
+        for ($i= $moduloActuel; $i < $nbMaxArticleLigne-1; $i++) {
+            echo '<div class="card"></div>';
+        }
+    }
+
+
+    if ($nbArticle%$nbMaxArticleLigne == $nbMaxArticleLigne-1){
+        echo '</div>';
+    }
+
+    $nbArticle++;
+
 }
-$conn->close();
-    ?>
+    
+
+echo'
+</div>
+';
+
+
+?>
   
-  <?php include("rsc/template/footer.php"); ?>
+<?php include("rsc/template/footer.php"); ?>
 
 </body>
 

@@ -53,7 +53,7 @@ include("global.php");
 
                 include("rsc/fonctions/recupererListeArticles.php");
 
-                foreach ($listeArticles as $numArticle => $unArticle){
+                foreach ($listeArticles as $idListe => $unArticle){
                     print('
                     <tr>
                         <td>'."<img src='./rsc/fonctions/genererVignette.php?nom=".$unArticle->img_url."'>".'</td>
