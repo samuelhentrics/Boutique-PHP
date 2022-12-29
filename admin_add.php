@@ -37,6 +37,7 @@ include("global.php");
                         </label>
                         <input type="text" class="form-control" id="titre" name="titre" />
                     </div>
+                    <br>
                     <div class="form-group">
                          
                         <label for="genre">
@@ -44,6 +45,7 @@ include("global.php");
                         </label>
                         <input type="text" class="form-control" id="genre" name="genre" />
                     </div>
+                    <br>
                     <div class="form-group">
                          
                         <label for="auteur">
@@ -51,6 +53,7 @@ include("global.php");
                         </label>
                         <input type="text" class="form-control" id="auteur" name="auteur" />
                     </div>
+                    <br>
                     <div class="form-group">
                          
                         <label for="prix">
@@ -58,13 +61,12 @@ include("global.php");
                         </label>
                         <input type="number" class="form-control" id="prix" name="prix" step="0.01" />
                     </div>
+                    <br>
                     <div class="form-group">
-					 
-					<label for="image">
-						Image
-					</label>
-					<input type="file" class="form-control-file" id="image" name="image" />
-				</div>
+                        <label for="formFile" class="form-label" name="image">Veuillez choisir l\'image (JPG/JPEG/PNG)</label>
+                        <input class="form-control" type="file" id="formFile" name="image">
+				    </div>
+                    <br>
                     <input type="submit" class="btn btn-primary" value="Ajouter">
                     </input>
                 </form>
