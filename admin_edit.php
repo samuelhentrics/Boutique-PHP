@@ -92,11 +92,10 @@ include("global.php");
                         </div>
                         <br>
                         <div class="form-group">
-                         
-                        <label for="formFile" class="form-label" name="image">Changer d\'image ?</label>
-                        <input class="form-control" type="file" id="formFile" name="image">
-                        <br>
+                            <label for="formFile" class="form-label" name="image">Changer d\'image ?</label>
+                            <input class="form-control" type="file" id="formFile" name="image">
                         </div>
+                        <br>
                         <input type="submit" class="btn btn-primary" value="Modifier">
                         </input>
                     </form>

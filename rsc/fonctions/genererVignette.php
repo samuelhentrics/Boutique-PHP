@@ -8,8 +8,15 @@ if (isset($_GET['nom'])) {
     $cheminImg = '../img/' . $nom_image;
 
     // Paramètres de redimensionnement
-    $largeur = 200;
-    $hauteur = 200;
+    if (isset($_GET['taille'])){
+        $largeur = $_GET['taille'];
+        $hauteur = $_GET['taille'];
+    }
+    else{
+        $largeur = 200;
+        $hauteur = 200;
+    }
+    
 
     // Déterminer le type de l'image
     $type = pathinfo($cheminImg, PATHINFO_EXTENSION);
