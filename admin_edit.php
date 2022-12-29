@@ -56,13 +56,17 @@ include("global.php");
                     <input type="hidden" name="id" value="'.$id.'"/>
                     <input type="hidden" name="url_image" value="'.$url_image.'"/>    
                     
+                    <div class="form-group text-center">
+                        <img src="./rsc/fonctions/genererVignette.php?nom='.$url_image.'">
+                    </div>
+                    <br>
                     <div class="form-group">
-                             
                             <label for="titre">
                                 Titre
                             </label>
                             <input type="text" class="form-control" id="titre" name="titre" value="'.$titre.'" />
                         </div>
+                        <br>
                         <div class="form-group">
                              
                             <label for="genre">
@@ -70,6 +74,7 @@ include("global.php");
                             </label>
                             <input type="text" class="form-control" id="genre" name="genre" value="'.$genre.'" />
                         </div>
+                        <br>
                         <div class="form-group">
                              
                             <label for="auteur">
@@ -77,6 +82,7 @@ include("global.php");
                             </label>
                             <input type="text" class="form-control" id="auteur" name="auteur" value="'.$auteur.'"/>
                         </div>
+                        <br>
                         <div class="form-group">
                              
                             <label for="prix">
@@ -84,15 +90,13 @@ include("global.php");
                             </label>
                             <input type="number" class="form-control" id="prix" name="prix" step="0.01" value="'.$prix.'" />
                         </div>
+                        <br>
                         <div class="form-group">
                          
-                        <label for="image">
-                            Changer l\'image ?
-                        </label>
-                        <input type="file" class="form-control-file" id="image" name="image" />
-                        </div>
+                        <label for="formFile" class="form-label" name="image">Changer d\'image ?</label>
+                        <input class="form-control" type="file" id="formFile" name="image">
                         <br>
-
+                        </div>
                         <input type="submit" class="btn btn-primary" value="Modifier">
                         </input>
                     </form>

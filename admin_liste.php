@@ -41,7 +41,7 @@ include("global.php");
             <table id="liste" class="display" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Image</th>
+                        <th>Vignette</th>
                         <th>Titre</th>
                         <th>Genre</th>
                         <th>Auteur</th>
@@ -56,7 +56,7 @@ include("global.php");
                 foreach ($listeArticles as $numArticle => $unArticle){
                     print('
                     <tr>
-                        <td>'.$unArticle->img_url.'</td>
+                        <td>'."<img src='./rsc/fonctions/genererVignette.php?nom=".$unArticle->img_url."'>".'</td>
                         <td>'.$unArticle->titre.'</td>
                         <td>'.$unArticle->genre.'</td>
                         <td>'.$unArticle->auteur.'</td>
@@ -64,12 +64,12 @@ include("global.php");
                         <td>
                             <form id="modifier" action="admin_edit.php" method="post">
                             <input type="hidden" name="id" value="'.$unArticle->id.'"/>
-                            <input type="submit" value="Modifier"></input>
+                            <input type="submit" class="btn btn-primary btn-lg" value="Modifier"></input>
                             </form>
-
+                            <br>
                             <form id="delete" action="rsc/fonctions/supprimerArticle.php" method="post">
                             <input type="hidden" name="id" value="'.$unArticle->id.'"/>
-                            <input type="submit" value="Supprimer"></input>
+                            <input type="submit" class="btn btn-danger btn-lg" value="Supprimer"></input>
                             </form>
                         </td>
                     </tr>
