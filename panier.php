@@ -100,7 +100,7 @@
                 <div class="col-md-10">';
 
                 echo '<p>Panier : '. str_replace(".","€",$totalPrix) .'</p>';
-                echo '<p>Frais de livraison estimés : Gratuit</p>';
+                echo '<p>Frais de livraison : Gratuit</p>';
                 echo '<h3>TOTAL : ' . str_replace(".","€",$totalPrix) .'</h3>';
 
                 echo '
@@ -108,7 +108,7 @@
                 <div class="col-md-2">';
                 if(isset($_SESSION['login']) && isset($_SESSION['pwd'])){
                     echo'
-                    <button class="btn btn-success btn-lg">Valider mon panier</button>
+                    <a class="btn btn-success btn-lg" href="payer.php">Valider mon panier</a>
                     ';
                 }
                 else{
