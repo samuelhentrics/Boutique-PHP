@@ -31,11 +31,18 @@
                 <h3>
                     Votre panier
                 </h3>
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-danger btn-lg" onclick="viderPanier()">Vider le panier</button>
-            </div>
-        </div><br>';
+            </div>';
+
+    if (!empty($_SESSION["monPanier"])){
+        echo '<div class="col-md-2">
+            <a href="rsc/fonctions/viderPanier.php" class="btn btn-danger btn-lg">Vider le panier</a>
+        </div>';
+    }
+    else{
+        echo '<div class="col-md-2"></div>';
+    }
+   
+    echo '</div><br>';
 
     if (isset($_SESSION["monPanier"])) {
 
@@ -74,7 +81,7 @@
                         <input type="number" id=inputQuantite' . $unElementDuPanier["id"] . ' placeholder="quantite" min="0" onchange="modifierquantite(' . $unElementDuPanier["id"] . ')" value="' . $unElementDuPanier["quantite"] . '">
                     </th>
                     <th>
-                        <button class="btn-danger" onclick="supprimerDuPanier(' . $unElementDuPanier["id"] . ')">Supprimer</button>
+                        <a class="btn btn-danger" href="rsc/fonctions/supprimerPanier.php?idCD='. $unElementDuPanier["id"] . '">Supprimer</a>
                     </th>
                 
                 </tr>
@@ -88,25 +95,25 @@
             </table>
             ";
 
-            echo '<br><div class="row">
-            <div class="col-md-10">';
+            echo '<br>
+            <div class="row">
+                <div class="col-md-10">';
 
-            echo '<p>Panier :'. str_replace(".","€",$totalPrix) .'</p>';
-            echo '<p>Frais de livraison estimés : Gratuit</p>';
-            echo '<h3>TOTAL : ' . str_replace(".","€",$totalPrix) .'</h3>';
+                echo '<p>Panier : '. str_replace(".","€",$totalPrix) .'</p>';
+                echo '<p>Frais de livraison estimés : Gratuit</p>';
+                echo '<h3>TOTAL : ' . str_replace(".","€",$totalPrix) .'</h3>';
 
-            echo '
-            </div>
+                echo '
+                </div>
                 <div class="col-md-2">';
-
                 if(isset($_SESSION['login']) && isset($_SESSION['pwd'])){
                     echo'
-                    <button class="btn btn-success btn-lg>Valider mon panier</button>
+                    <button class="btn btn-success btn-lg">Valider mon panier</button>
                     ';
                 }
                 else{
                     echo '<p>Vous devez être connecté pour payer</p>';
-                echo '<a class="btn btn-primary btn-lg" href="login.php">Se connecter</a>';
+                    echo '<a class="btn btn-primary btn-lg" href="login.php">Se connecter</a>';
                 }
             
             echo '</div>
