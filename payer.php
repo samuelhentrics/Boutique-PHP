@@ -47,15 +47,23 @@
 
             echo '
             <form action="rsc/fonctions/validationCarteBancaire.php" method="post">
-                <label for="numeroCarte">Numéro de carte (5134476373697754) : </label><br>
-                <input type="text" id="numeroCarte" name="numeroCarte" required><br>
-                <label for="nomCarte">Nom du titulaire de la carte :(null)</label><br>
-                <input type="text" id="nomCarte" name="nomCarte" required><br>
-                <label for="dateExpiCarte">Date d\'expiration (MM/YYYY) :</label><br>
-                <input type="text" id="dateExpiCarte" name="dateExpiCarte" required><br>
-                <label for="cvv">CVV :</label><br>
-                <input type="text" id="cvv" name="cvv" required><br><br>
-                <input type="submit" value="Payer">
+                <div class="form-group">
+                    <label for="numeroCarte">Numéro de carte (5134476373697754)</label>
+                    <input type="text" class="form-control" id="numeroCarte" name="numeroCarte" placeholder="XXXXXXXXXXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="nomCarte">Nom du titulaire</label>
+                    <input type="text" class="form-control" id="nomCarte" placeholder="VOTRE NOM" name="nomCarte" required>
+                </div>
+                <div class="form-group">
+                    <label for="dateExpiCarte">Date d\'expiration</label>
+                    <input type="text" class="form-control" id="dateExpiCarte" placeholder="MM/YYYY" name="dateExpiCarte" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv" placeholder="XXX" name="cvv" required>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Payer">
             </form>
             ';
 
