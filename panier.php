@@ -131,18 +131,6 @@
     include("rsc/template/footer.php");
 
     ?>
-    <form action="validationCarteBancaire.php" method="post">
-        <label for="numeroCarte">Numéro de carte (5134476373697754) : </label><br>
-        <input type="text" id="numeroCarte" name="numeroCarte" required><br>
-        <label for="nomCarte">Nom du titulaire de la carte :(null)</label><br>
-        <input type="text" id="nomCarte" name="nomCarte" required><br>
-        <label for="dateExpiCarte">Date d'expiration (MM/YYYY) :</label><br>
-        <input type="text" id="dateExpiCarte" name="dateExpiCarte" required><br>
-        <label for="cvv">CVV :</label><br>
-        <input type="text" id="cvv" name="cvv" required><br><br>
-        <input type="submit" value="Payer">
-    </form>
-
 
 </body>
 
