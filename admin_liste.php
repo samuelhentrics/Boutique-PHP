@@ -69,6 +69,7 @@ include("global.php");
                             <br>
                             <form id="delete" action="rsc/fonctions/supprimerArticle.php" method="post">
                             <input type="hidden" name="id" value="'.$unArticle->id.'"/>
+                            <input type="hidden" name="url_image" value="'.$unArticle->img_url.'"/>
                             <input type="submit" class="btn btn-danger btn-lg" value="Supprimer"></input>
                             </form>
                         </td>

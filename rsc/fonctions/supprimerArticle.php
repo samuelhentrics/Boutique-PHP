@@ -5,7 +5,7 @@ session_start();
 if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['role'])) {
     if ($_SESSION['role']) {
         // on teste si nos variables sont définies
-        if (isset($_POST['id'])) {
+        if (isset($_POST['id']) && isset($_POST['url_image'])) {
             // On récupére le mot de passe du nom de login
             include("sql_param.php");
 
@@ -13,6 +13,13 @@ if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['rol
             $id = $_POST['id'];
 
             $nomtable = "cd";
+
+            // Supprimer l'image du CD
+            $file = "../img/" . $_POST["url_image"];
+
+            if (file_exists($file)) {
+                unlink($file);
+            }
 
             $link = mysqli_connect($host, $user, $pass, $bdd) or die("Impossible de se connecter à la BDD");
 
