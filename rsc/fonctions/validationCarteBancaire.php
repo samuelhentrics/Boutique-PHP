@@ -32,18 +32,22 @@ foreach ($regexes as $key => $uneRegexCB) {
 if (!preg_match('/^[0-9]{2}\/[0-9]{4}$/', $dateExpiCarte)) {
     // La date d'expiration doit être au format MM/YYYY
     $carteValide = false;
-} elseif (!preg_match('/^[0-9]{3}$/', $cvv)) {
+}
+else{
+    // Transformer la date au format Y-m
+    $dateTab = explode('/', $dateExpiCarte);
+    $dateExpiCarte = $dateTab[1] . "-" . $dateTab[0];
+}
+
+if (!preg_match('/^[0-9]{3}$/', $cvv)) {
     // Le CVV doit être un nombre
     $carteValide = false;
 }
 
-// Vérification que la carte à une date > 4 mois
-$dateMaxCarteValide = date("m/Y", strtotime("+4 months"));
+// Vérification que la carte à une date > 2 mois
+$dateMaxCarteValide = date("Y-m", strtotime("+3 months"));
 
-print_r($dateMaxCarteValide."<br>");
-print_r($dateExpiCarte."<br>");
-
-if (!(strtotime($dateMaxCarteValide) >= strtotime($dateExpiCarte))) {
+if (strtotime($dateMaxCarteValide) > strtotime($dateExpiCarte)) {
     $carteValide = false;
 }
 
@@ -80,8 +84,6 @@ function cacherDiv() {
 
 ');
 
-
-
 if ($carteValide) {
     // La carte bancaire est valide, on peut effectuer le paiement
     // Code de traitement du paiement...
@@ -97,11 +99,11 @@ if ($carteValide) {
     </body>
     
     ';
-    $_SESSION["monPanier"] = array();
-    $_SESSION["achat"] = "ok";
-    echo "<script>setTimeout(() => {
-         location.replace('../../achatConfirme.php')
-    }, 5000); </script>";
+    // $_SESSION["monPanier"] = array();
+    // $_SESSION["achat"] = "ok";
+    // echo "<script>setTimeout(() => {
+    //      location.replace('../../achatConfirme.php')
+    // }, 5000); </script>";
 
 } else {
     // La carte bancaire est invalide, affichage d'un message d'erreur
@@ -119,8 +121,8 @@ if ($carteValide) {
     
 
 
-    echo "<script>setTimeout(() => {
-        location.replace('../../panier.php')
-    }, 5000); </script>";
+    // echo "<script>setTimeout(() => {
+    //     location.replace('../../panier.php')
+    // }, 5000); </script>";
 }
 ?>
