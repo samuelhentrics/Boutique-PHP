@@ -38,7 +38,9 @@
                 <small>Auteur : '.$article->auteur.' | Genre : '. $article->genre .'</small>
                 <p>Découvrez l\'album "'. $article->titre.'" de '. $article->auteur .' !
                 <h4>Prix : '.$article->prix.'</h4>
-                <a class="btn btn-primary" href="rsc/fonctions/ajoutPanier.php?idCD='.$article->id.'">Ajouter au panier</a>
+                <a class="btn btn-primary" href="rsc/fonctions/ajoutPanier.php?idCD='.$article->id.'">
+                    Ajouter au panier <i class="fa-solid fa-cart-shopping"></i>
+                </a>
             </div>
         
         

@@ -13,7 +13,10 @@
         <a class="nav-link" href="articles.php">Articles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="panier.php">Panier</a>
+        <a class="btn btn-outline-primary" href="panier.php">
+          Panier
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
       </li>
       
       <?php
@@ -33,7 +36,10 @@
 
         // On propose à l'utilisateur de se déconnecter
         print('<li class="nav-item">');
-        print("<a href=\"rsc/fonctions/logout.php\" class=\"btn btn-outline-danger\" >Se déconnecter</a>");
+        print('
+        <a href="rsc/fonctions/logout.php" class="btn btn-outline-danger" >
+          Se déconnecter <i class="fa-solid fa-right-from-bracket"></i>
+        </a>');
         print('</li>');
       }
 

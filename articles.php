@@ -46,7 +46,9 @@ foreach ($listeArticles as $idListe => $unArticle){
             <p class="card-text"><small class="text-muted">Artiste : '. $unArticle->auteur .'</small></p>
             <p class="card-text">Prix : '. $unArticle->prix .'</p>
             <a class="btn btn-success" href="info.php?idListe='.$idListe.'">Info</a>
-            <a class="btn btn-primary" href="rsc/fonctions/ajoutPanier.php?idCD='.$unArticle->id.'">Ajouter au panier</a>
+            <a class="btn btn-primary" href="rsc/fonctions/ajoutPanier.php?idCD='.$unArticle->id.'">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
         </div>
     </div>
     ';
