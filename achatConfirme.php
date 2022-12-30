@@ -21,7 +21,16 @@
 
     // Cas où l'on est déjà connecté
     if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['achat'])) {
-        print("Vous êtes déjà connecté");
+        $numeroCommande = mt_rand(100000, 999999);
+        echo '
+        
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Merci pour votre achat !</h4>
+            <p>Votre commande n°'.$numeroCommande.' a bien été prise en compte. Nous l\'expédirons le plus tôt possible.</p>
+        </div>
+        
+        ';
+
         unset($_SESSION['achat']);
     }
     else {

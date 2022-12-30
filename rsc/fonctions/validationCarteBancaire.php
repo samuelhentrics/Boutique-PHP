@@ -99,11 +99,11 @@ if ($carteValide) {
     </body>
     
     ';
-    // $_SESSION["monPanier"] = array();
-    // $_SESSION["achat"] = "ok";
-    // echo "<script>setTimeout(() => {
-    //      location.replace('../../achatConfirme.php')
-    // }, 5000); </script>";
+    $_SESSION["monPanier"] = array();
+    $_SESSION["achat"] = "ok";
+    echo "<script>setTimeout(() => {
+         location.replace('../../achatConfirme.php')
+    }, 5000); </script>";
 
 } else {
     // La carte bancaire est invalide, affichage d'un message d'erreur
@@ -121,8 +121,8 @@ if ($carteValide) {
     
 
 
-    // echo "<script>setTimeout(() => {
-    //     location.replace('../../panier.php')
-    // }, 5000); </script>";
+    echo "<script>setTimeout(() => {
+        location.replace('../../panier.php')
+    }, 5000); </script>";
 }
 ?>
