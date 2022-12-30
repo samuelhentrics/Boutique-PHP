@@ -26,12 +26,12 @@ include("global.php");
     if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['role'])) {
         if($_SESSION['role']){
             print('<div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             <h3>
                                 Liste des articles
                             </h3>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <a type="button" class="btn btn-primary btn-lg" href="admin_add.php">
                                 Ajouter un article
                             </a>

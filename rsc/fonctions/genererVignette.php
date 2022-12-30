@@ -35,16 +35,11 @@ if (isset($_GET['nom'])) {
     $largeurImage = imagesx($image);
     $hauteurImage = imagesy($image);
 
-    // Calculer les dimensions de la nouvelle image 
-    $ratio = min($largeur / $largeurImage, $hauteur / $hauteurImage);
-    $nouvelleLargeur = $largeurImage * $ratio;
-    $nouvelleHauteur = $hauteurImage * $ratio;
-
     // Créer la vignette
-    $vignette = imagecreatetruecolor($nouvelleLargeur, $nouvelleHauteur);
+    $vignette = imagecreatetruecolor($largeur, $hauteur);
 
     // Redimensionner l'image
-    imagecopyresampled($vignette, $image, 0, 0, 0, 0, $nouvelleLargeur, $nouvelleHauteur, $largeurImage, $hauteurImage);
+    imagecopyresampled($vignette, $image, 0, 0, 0, 0, $largeur, $hauteur, $largeurImage, $hauteurImage);
 
     // Envoyer l'image au navigateur
     header('Content-Type: image/jpeg');

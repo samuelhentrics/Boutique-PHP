@@ -29,11 +29,11 @@
         <h2> Information sur l\'article </h2>
         
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <img src="rsc/fonctions/genererVignette.php?nom='.$article->img_url.'">
             </div>
 
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <h3>'.$article->titre.'</h3>
                 <small>Auteur : '.$article->auteur.' | Genre : '. $article->genre .'</small>
                 <p>Découvrez l\'album "'. $article->titre.'" de '. $article->auteur .' !
