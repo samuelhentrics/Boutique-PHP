@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 22 déc. 2022 à 18:11
+-- Généré le : mar. 03 jan. 2023 à 11:33
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -43,7 +43,9 @@ CREATE TABLE `cd` (
 INSERT INTO `cd` (`id`, `titre`, `genre`, `auteur`, `prix`, `url_image`) VALUES
 (1, 'Civilisation', 'French RAP', 'Orelsan', '27.99', 'Civilisation.jpg'),
 (2, 'Mauvais Ordre', 'French RAP', 'Lomepal', '21.99', 'Mauvais-Ordre.jpg'),
-(3, 'L\'Emprise', 'French Indie', 'Mylene Farmer', '19.99', 'L-Emprise.jpg');
+(3, 'L\'Emprise', 'French Indie', 'Mylene Farmer', '19.99', 'L-Emprise.jpg'),
+(18, 'Only The Strong Survive', 'Rock', 'BRUCE SPRINGSTEEN', '15.99', '63adaf6d7b3018.89097026.jpeg'),
+(19, 'Coeur Encore Ã‰dition LimitÃ©e', 'French Urban Pop/R&B', 'CLARA LUCIANI', '18.99', '63adafdd4bb694.19722983.jpg');
 
 -- --------------------------------------------------------
 
@@ -91,13 +93,13 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `cd`
 --
 ALTER TABLE `cd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
