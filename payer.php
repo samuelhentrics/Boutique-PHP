@@ -48,7 +48,7 @@
             echo '
             <form action="rsc/fonctions/validationCarteBancaire.php" method="post">
                 <div class="form-group">
-                    <label for="numeroCarte">Numéro de carte (5134476373697754)</label>
+                    <label for="numeroCarte">Numéro de carte</label>
                     <input type="text" class="form-control" id="numeroCarte" name="numeroCarte" placeholder="XXXXXXXXXXXXXXXX" required>
                 </div>
                 <div class="form-group">

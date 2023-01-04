@@ -1,30 +1,22 @@
 <?php
 session_start();
+
 // Récupération des données du formulaire
 $numeroCarte = $_POST['numeroCarte'];
 $nomCarte = $_POST['nomCarte'];
 $dateExpiCarte = $_POST['dateExpiCarte'];
 $cvv = $_POST['cvv'];
 
+$carteValide = true;
 
-// Tableau des regex de validation des numéros de carte bancaire
-$regexes = array(
-    'visa' => '/^4[0-9]{12}(?:[0-9]{3})?$/',
-    'mastercard' => '/^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/',
-    'amex' => '/^3[47][0-9]{13}$/',
-    'diners' => '/^3(?:0[0-5]|[68][0-9])[0-9]{11}$/',
-    'discover' => '/^6(?:011|5[0-9]{2})[0-9]{12}$/',
-    'jcb' => '/^(?:2131|1800|35\d{3})\d{11}$/'
-);
-
-        $carteValide = false;
-foreach ($regexes as $key => $uneRegexCB) {
-    // Vérification de la validité du numéro de carte bancaire
-    if (preg_match($uneRegexCB, $numeroCarte)) {
-        // Le numéro de carte bancaire est valide
-        // Code de traitement du paiement...
-        $carteValide = true;
-    }
+// Vérifier que le code de carte bancaire est correcte
+if (!preg_match('/^[0-9]{16}$/', $numeroCarte)) {
+    // Vérifier que l'on ait 16 caractères qui sont des chiffres
+    $carteValide = false;
+}
+if($numeroCarte[0]!=$numeroCarte[strlen($numeroCarte)-1]){
+    // Vérifier que le premier caractere est le meme que le dernier
+    $carteValide = false;
 }
 
 
