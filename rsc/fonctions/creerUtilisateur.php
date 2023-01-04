@@ -18,9 +18,7 @@ if (isset($_POST['user']) && isset($_POST['pwd'])) {
 
 
     $nomtable = "utilisateur";
-
     $link = mysqli_connect($host, $user, $pass, $bdd) or die("Impossible de se connecter à la BDD");
-
     $query = "INSERT INTO $nomtable (user, mdp, role) VALUES ('$username','$mdp',$estAdmin)";
 
     try {
@@ -38,5 +36,5 @@ if (isset($_POST['user']) && isset($_POST['pwd'])) {
     // Redirection vers le login
     echo '<meta http-equiv="refresh" content="0;URL=../../login.php">';
 } else {
-    echo 'Les variables du formulaire ne sont pas déclarées.';
+    echo '<meta http-equiv="refresh" content="0;URL=../../register.php">';
 }

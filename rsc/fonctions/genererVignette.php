@@ -13,6 +13,7 @@ if (isset($_GET['nom'])) {
         $hauteur = $_GET['taille'];
     }
     else{
+        // Valeur par défaut
         $largeur = 200;
         $hauteur = 200;
     }

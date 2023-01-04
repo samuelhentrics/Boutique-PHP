@@ -2,11 +2,13 @@
 
 session_start();
 
+// Vérifier que l'on est connecté
 if (isset($_SESSION['login']) && isset($_SESSION['pwd']) && isset($_SESSION['role'])) {
+    // Vérifier que l'one est admin
     if ($_SESSION['role']) {
         // on teste si nos variables sont définies
         if (isset($_POST['titre']) && isset($_POST['genre']) && isset($_POST['auteur']) && isset($_POST['prix']) && isset($_FILES['image'])) {
-            // On récupére le mot de passe du nom de login
+            // On récupére les infos BDD
             include("sql_param.php");
 
             // On récupére les données du formulaire

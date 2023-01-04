@@ -1,5 +1,6 @@
-<?php function creerListeArticles()
-{
+<?php
+function creerListeArticles(){
+    // Recuperer la classe Article
     include("rsc/class/Article.php");
 
     // Création de la liste (vide)
