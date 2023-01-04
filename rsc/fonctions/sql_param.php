@@ -1,7 +1,7 @@
 <?php
 
 $bdd = "shloistine_bd";
-$host = "localhost";
+$host = "lakartxela.iutbayonne.univ-pau.fr";
 $user = "shloistine_bd";
 $pass = "shloistine_bd";
 

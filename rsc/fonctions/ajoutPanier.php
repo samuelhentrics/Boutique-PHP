@@ -5,8 +5,10 @@ session_start();
 
 include("sql_param.php");
 
-// Create connection
+// Créer la connexion à la BDD
 $conn = new mysqli($host, $user, $pass, $bdd);
+
+// Récupérer toutes les infos sur les CD
 $sql = "SELECT * FROM cd";
 $result = $conn->query($sql);
 $listeCD = array();
