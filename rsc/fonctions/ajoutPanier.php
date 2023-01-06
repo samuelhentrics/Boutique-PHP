@@ -13,7 +13,6 @@ $sql = "SELECT * FROM cd";
 $result = $conn->query($sql);
 $listeCD = array();
 if ($result->num_rows > 0) {
-    // output data of each row
     while($row = $result->fetch_assoc()) {
         $listeCD[$row['id']] = array('id'=> $row['id'],'titre' => $row['titre'], 'genre' => $row['genre'], 'auteur' => $row['auteur'],'prix' => $row['prix'],'url_image' => $row['url_image'], 'quantite' => 1);
     }
@@ -22,12 +21,15 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 
-
+// Cas où l'on donne en parametre un idCD
 if (isset($listeCD[$_GET["idCD"]])) {
+    // S'il n'existe pas de CD avec cet id
     if (!$_SESSION['monPanier'][$_GET["idCD"]]){
+        // Ajouter l'article avec une quantité de 1
         $_SESSION['monPanier'][$_GET["idCD"]] = $listeCD[$_GET["idCD"]];
     }
     else{
+        // Sinon augmenter la quantité
         $_SESSION["monPanier"][$_GET["idCD"]]['quantite'] = $_SESSION["monPanier"][$_GET["idCD"]]['quantite']+1;
     }
     echo '<body onLoad="alert(\'Article ajouté au panier\')">';
